@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+{% load crispy_forms_tags %}
+
+{% block title %}
+<title>UPDATE STUDENT DETAILS</title>
+{% endblock %}
+
+{% block content %}
+<div class="container" style="background-color: #d0e0e3; padding: 30px;">
+    <h1 style="text-align: center;"><u>Student Update Details</u></h1>
+    <form method="post">
+        {% csrf_token %}
+        <table>
+            {{form | crispy}}
+        </table>
+        <button type="submit" class="btn btn-outline-dark col-5">UPDATE STUDENT</button>
+        <a href="{% url 'Show_Student' %}"><button type="button" class="btn btn-outline-dark col-5 float-end">CANCEL
+                STUDENT</button></a>
+    </form>
+</div>
+{% endblock %}

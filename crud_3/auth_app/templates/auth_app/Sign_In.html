@@ -1,0 +1,30 @@
+{% extends 'base.html' %}
+{% load crispy_forms_tags %}
+
+{% block title %}
+<title>Sign In</title>
+{% endblock %}
+
+{% block content %}
+<div class="container" style="background-color: #d0e0e3; padding: 30px;">
+    <h1 style="text-align: center;"><u>SIGN IN / LOG IN</u></h1>
+    <form method="post">
+        {% csrf_token %}
+        <div>
+            <label for="username">USERNAME</label>
+            <input type="text" id="username" name="username" placeholder="Enter Your UserName" class="form-control">
+        </div>
+        <br>
+        <div>
+            <label for="password">PASSWORD</label>
+            <input type="password" id="password" name="password" placeholder="********" class="form-control">
+        </div>
+        <br>
+        <div>
+            <button type="submit" class="btn btn-outline-dark col-5">SIGN IN</button>
+            <a href="{% url 'Sign_Up' %}"><button type="button" class="btn btn-outline-dark col-5 float-end">SIGN
+                    UP</button></a>
+        </div>
+    </form>
+</div>
+{% endblock %}

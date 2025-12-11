@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+
+{% block title %}
+<title>DELETE STUDENT</title>
+{% endblock %}
+
+{% block content %}
+<div class="container" style="background-color: #d0e0e3; padding: 30px;">
+    <h1 style="text-align: center;"><u>Student Delete Details</u></h1>
+    <form method="post">
+        {% csrf_token %}
+        <h2 style="padding-top: 20px; text-align: center;">Are You Sure Want To Delete Record Permenantly ?</h2>
+        <h3 style="padding-top: 20px; text-align: center;"><u>{{obj.stu_id}} {{obj.first_name}} {{obj.last_name}}</u>
+        </h3>
+        <button type="submit" class="btn btn-outline-dark col-5">DELETE STUDENT</button>
+        <a href="{% url 'Show_Student' %}"><button type="button" class="btn btn-outline-dark col-5 float-end">CANCEL
+                STUDENT</button></a>
+    </form>
+</div>
+{% endblock %}
